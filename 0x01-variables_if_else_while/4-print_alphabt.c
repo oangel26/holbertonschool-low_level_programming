@@ -10,12 +10,15 @@
  */
 int main(void)
 {
-	char ch
+	char ch;
 	/* your code goes there */
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		putchar(ch);
+		if ((ch != 'e') && (ch != 'q'))
+		{
+			putchar(ch);
+		}
 	}
 	putchar('\n');
 
