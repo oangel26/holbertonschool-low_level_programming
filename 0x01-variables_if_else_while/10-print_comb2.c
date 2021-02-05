@@ -23,7 +23,7 @@ int main(void)
 
 			putchar(y + '0');
 
-			if (y <= 9)
+			if (y != 9 || x != 9)
 			{
 				putchar(',');
 
