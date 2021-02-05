@@ -10,15 +10,15 @@
  */
 int main(void)
 {
-	char x;
+	int x;
 
 /* your code goes there */
 
-	for (x = '0'; x <= '9'; x++)
+	for (x = 0; x <= 9; x++)
 	{
-		putchar(x);
+		putchar(x + '0');
 
-		if (x <= '8')
+		if (x <= 8)
 		{
 			putchar(',');
 
