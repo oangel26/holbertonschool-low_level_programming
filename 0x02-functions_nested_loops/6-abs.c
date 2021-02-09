@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main -  entry point
+ * _abs -  entry point
  * @x: number of entry
- * Description: program prints Holberton
+ * Description: function that computes the absolute value of an integer
  * Return: Always 0 (Success)
  */
 
