@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main -  entry point
+ * _isalpha -  entry point
  * @c: interger of entry
  * Description: program prints Holberton
  * Return: Always 0 (Success)
