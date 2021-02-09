@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * main -  entry point
- * Description: program prints Holberton
- * Return: Always 0 (Success)
+ * print_alphabet -  entry point
+ * Description: program prints alphabet in lower case
+ * Return: void return
  */
 
 void print_alphabet(void)
