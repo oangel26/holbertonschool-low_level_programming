@@ -2,14 +2,12 @@
 
 /**
  * int print_last_digit -  entry point
- * @c: entry number
+ * @x: entry number
  * Description: function that prints the last digit of a number
  * Return: return last digit
  */
 
 int print_last_digit(int x)
 {
-	int lastDigit;
-	lastDigit = x % 10;
-	return (lastDigit);
+	return (x % 10);
 }
