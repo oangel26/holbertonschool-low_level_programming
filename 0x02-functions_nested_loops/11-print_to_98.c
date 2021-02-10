@@ -13,15 +13,21 @@ void print_to_98(int n)
 		{
 			printf("%d", n);
 			n++;
+			if (n != 89)
+			{
 			putchar(',');
 			putchar(' ');
+			}
 		}
 		while (n > 97)
 		{
 			printf("%d", n);
 			n--;
+			if (n != 89)
+			{
 			putchar(',');
 			putchar(' ');
+			}
 		}
 
 	putchar('\n');
