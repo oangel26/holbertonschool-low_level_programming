@@ -3,7 +3,7 @@
 
 /**
 * print_line - function that draws a straight line in the terminal
-* @n: interger 
+* @n: interger
 * Description: function that draws a straight line in the terminal
 * Return: void
 */

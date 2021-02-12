@@ -7,27 +7,23 @@
 * Return: void
 */
 
-
 void more_numbers(void)
 {
-	int x;
-	int y;
+        int x;
+        int y;
+        int z;
 
-	for (x = 0; x <= 9; x++)
+	for (z = 0; z <= 9; z++)
 	{
-		for (y = 0; y <= 14; y++)
+		for (x = 0; x <= 9; x++)
 		{
-			if (x < 10)
-			{
-				_putchar(x + '0');
-			}
-			else
-			{
-				x = x % 10;
-				_putchar('1');
-				_putchar(x + '0');
-			}
+			putchar(x + '0');
 		}
-		_putchar('\n');
+		for (y = 0; y <= 4; y++)
+		{
+			putchar('1');
+			putchar(y + '0');
+		}
+                putchar('\n');
 	}
 }
