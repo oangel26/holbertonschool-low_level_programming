@@ -18,7 +18,7 @@ void more_numbers(void)
 	}
 	for (y = 0; y <= 4; y++)
 	{
-		_puthcar('1');
+		_putchar('1');
 		_putchar('0' + y);
 	}
 	_putchar('\n');
