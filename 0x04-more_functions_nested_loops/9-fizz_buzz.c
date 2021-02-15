@@ -2,35 +2,44 @@
 
 
 /**
-* prints_fizz_buzz - prints the numbers from 1 to 100, Fizz and Buzz in 3 and 5
+* main - prints the numbers from 1 to 100, Fizz and Buzz in 3 and 5
 * Description: rints the numbers from 1 to 100, Fizz and Buzz in 3 and 5 mod
 * Return: void
 */
 
-void prints_fizz_buzz(void)
+void prints_fizz_buzz(void);
+
+int main(void)
 {
 	int i;
 	int a;
 	int b;
 
-	for (i = 0; i <= 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
 		a = i % 3;
 		b = i % 5;
-		if (a == 0)
+		if ((a != 0 || b != 0) && a != 0 && b != 0) 
+		{
+			printf("%d", i);
+			printf(" ");
+		}
+		else if (a == 0 && b != 0)
 		{
 			printf("Fizz");
+			printf(" ");
 		}
-		else if (b == 0)
+		else if (b == 0 && a != 0)
 		{
 			printf("Buzz");
+			printf(" ");
 		}
 		else if (a == 0 && b == 0)
 		{
 			printf("FizzBuzz");
+			printf(" ");
 		}
-		else
-			printf("d%", i);
 	}
 	printf("\n");
+	return (0);
 }
