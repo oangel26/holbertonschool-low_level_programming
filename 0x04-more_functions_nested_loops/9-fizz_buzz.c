@@ -31,8 +31,13 @@ int main(void)
 		}
 		else if (b == 0 && a != 0)
 		{
-			printf("Buzz");
-			printf(" ");
+			if (i != 100)
+			{
+				printf("Buzz");
+				printf(" ");
+			}
+			else
+				printf("Buzz");
 		}
 		else if (a == 0 && b == 0)
 		{
