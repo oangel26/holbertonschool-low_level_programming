@@ -19,7 +19,7 @@ int main(void)
 	{
 		a = i % 3;
 		b = i % 5;
-		if ((a != 0 || b != 0) && a != 0 && b != 0) 
+		if ((a != 0 || b != 0) && a != 0 && b != 0)
 		{
 			printf("%d", i);
 			printf(" ");
