@@ -12,8 +12,6 @@
 char *_strcpy(char *dest, char *src)
 {
 	int i;
-	int x;
-	int 0;
 
 	for (i = 0; i <= 98; i++)
 	{
