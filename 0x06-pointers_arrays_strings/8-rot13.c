@@ -2,8 +2,8 @@
 
 
 /**
- * *rot13 - function that encodes a string using rot13
- * @*x: pointer type char
+ * rot13 - function that encodes a string using rot13
+ * @x: pointer type char
  * Description: function that encodes a string using rot13
  * Return: pointer type char
  */

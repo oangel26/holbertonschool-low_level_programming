@@ -2,7 +2,7 @@
 
 /**
  * reverse_array - function that reverses the content of an array of integers.
- * @*a: pointer type interger
+ * @a: pointer type interger
  * @n: interger
  * Description: function that reverses the content of an array of integers.
  * Return: void
@@ -20,7 +20,7 @@ void reverse_array(int *a, int n)
 
 	}
 	x = i--;
-	for (j = 0; j < x/2; j++, i--)
+	for (j = 0; j < x / 2; j++, i--)
 	{
 		temp = a[j];
 		a[j] = a[i];

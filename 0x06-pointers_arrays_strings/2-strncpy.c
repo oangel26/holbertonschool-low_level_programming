@@ -2,9 +2,9 @@
 
 
 /**
- * *_strncpy - function that copies a string
- * @*dest: pointer type char
- * @*src: pointer type char
+ * _strncpy - function that copies a string
+ * @dest: pointer type char
+ * @src: pointer type char
  * @n: interger
  * Description: function that copies a string
  * Return: pointer type char
@@ -22,6 +22,5 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[i++] = src[j];
 	}
-	return dest;
+	return (dest);
 }
-y

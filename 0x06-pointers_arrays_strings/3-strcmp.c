@@ -3,8 +3,8 @@
 
 /**
  * _strcmp - function that compares two strings
- * @*s1: pointer type char
- * @*s2: pointer type char
+ * @s1: pointer type char
+ * @s2: pointer type char
  * Description: function that compares two strings
  * Return: interger
  */
@@ -25,5 +25,5 @@ int _strcmp(char *s1, char *s2)
 		{
 		}
 	dif = s1[i] - s2[i];
-	return dif;
+	return (dif);
 }
