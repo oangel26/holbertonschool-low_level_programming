@@ -17,7 +17,7 @@ char *leet(char *x)
 	char string[] = "a4A4e3E3o0O0t7T7l1L1";
 
 	p = string;
-	s = &x;
+	s = x;
 
 
 	for(i = 0; s[i] != '\0'; i++)
