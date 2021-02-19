@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-* *_strcat - function that concatenates two strings
-* @*dest: pointer type char
-* @*src: pointer type char
+* _strcat - function that concatenates two strings
+* @dest: pointer type char
+* @src: pointer type char
 * Description: function that concatenates two strings
 * Return: char
 */
