@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strpbrk - locates the first occurrence in a string for any of a set of bytes
+ * _strpbrk - locates the first occurrence in s for any of a set of bytes
  * @s: the string
  * @accept: string accept
  * Return: a pointer to the byte in s that matches one of the bytes in accept
