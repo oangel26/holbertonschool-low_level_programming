@@ -1,5 +1,4 @@
-#include "holberton.h"
-
+#include <stdio.h>
 /**
  * main - program that prints its name, followed by a new line.
  * @argc: arguments count
@@ -16,11 +15,11 @@ int main(int argc, char* argv[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-		_putchar(argv[i][j]);
+		putchar(argv[i][j]);
 		}
 	}
 
-	_putchar('\n');
+	putchar('\n');
 
 	return (0);
 }
