@@ -4,11 +4,11 @@
 #include <string.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * array_range - function that creates an array of integers.
+ * @min: interger minimum number to contain in array
+ * @max: interger maximum numbert to contain in array
  *
- * Return: Nothing.
+ * Return: pointer to interger of the newly created array
  */
 
 int *array_range(int min, int max)
