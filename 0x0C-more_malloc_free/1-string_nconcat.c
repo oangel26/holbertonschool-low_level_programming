@@ -7,7 +7,7 @@
  * @s1: pointer to char (string 1)
  * @s2: pointer to char (stirng 2)
  * @n: number of bytes to be copied of string 2
- * Return: pointer to char with newly allocated space in memory of s1 and s2 
+ * Return: pointer to char with newly allocated space in memory of s1 and s2
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
