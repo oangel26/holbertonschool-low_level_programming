@@ -4,7 +4,7 @@
 /**
  * array_iterator - exe. a funct. given as a para. on each element of an array
  * @array: array
- * @siz: size of the array
+ * @size: size of the array
  * @action: pointer to function void return with interger innput
  *
  * Return: Nothing.
