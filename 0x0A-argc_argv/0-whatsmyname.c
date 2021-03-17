@@ -6,7 +6,7 @@
  * Return: Always 0 if succefull
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 	int j;
@@ -15,11 +15,9 @@ int main(int argc, char* argv[])
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-		putchar(argv[i][j]);
+			putchar(argv[i][j]);
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
