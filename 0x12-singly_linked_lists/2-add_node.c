@@ -4,10 +4,10 @@
 #include "lists.h"
 
 /**
- * add_node -  function that adds a new node at the beginning of a list_t list
+ * add_node - function that adds a new node at the beginning of a list_t list
  * @head: pointer to point of data structur list_t
  * @str: constnt string
- * Return data structre
+ * Return: pointer to data structre list_t
  */
 
 list_t *add_node(list_t **head, const char *str)
