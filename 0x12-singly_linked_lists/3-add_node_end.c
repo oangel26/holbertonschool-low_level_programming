@@ -6,7 +6,7 @@
 /**
  * add_node_end -  function that adds a new node at the end of a list.
  * @head: pointer to apointer whith the address of the head
- * @str: constrant string 
+ * @str: constrant string
  * Return: pointer to a data structure list (list_t)
  */
 
