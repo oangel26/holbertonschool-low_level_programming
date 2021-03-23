@@ -12,7 +12,7 @@
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *ptrNode;
+	listint_t *ptrNode = NULL;
 
 	if (*head == NULL)
 	{
