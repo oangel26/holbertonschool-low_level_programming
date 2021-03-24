@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *currentNode = NULL;
+	listint_t *prevNode = NULL;
+
+	if (head == NULL || *head == NULL)
+	{
+		return (NULL);
+	}
+	while ((*head)->next != NULL)
+	{
+		currentNode = *head;
+		*head = (*head)->next;
+		currentNode->next = prevNode;
+		prevNode = currentNode;
+	}
+	currentNode = *head;
+	currentNode->next = prevNode;
+	prevNode = currentNode;
+	return (*head);
+}
