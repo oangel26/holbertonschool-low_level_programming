@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * reverse_listint -  function that reverses a linked list.
+ * @head: pointer to pointer containing first element of list.
+ * Return: pointer to fisrt node of the reversed list.
  */
 
 listint_t *reverse_listint(listint_t **head)
