@@ -4,11 +4,11 @@
 #include "lists.h"
 
 /**
- * first - print text before main() is executerd
+ * premain - execute functio before main() is executerd
  * Return: void
  */
 
-void first ((constructor)) premain()
+void __attribute__ ((constructor)) premain()
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
