@@ -15,15 +15,13 @@ void free_list(list_t *head)
 
 	if (head == NULL)
 	{
-		printf("head is Null\n");
 		return;
 	}
 	while (head != NULL)
 	{
 		temp = head;
 		head = head->next;
-		temp->str = NULL;
-		temp->len = 0;
+		free(temp->str);
 		free(temp);
 	}
 }
