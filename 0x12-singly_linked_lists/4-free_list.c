@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * free_list - unction that frees a list
+ * @head: pointer to data structure list_t
+ * Return: void
  */
 
 void free_list(list_t *head)
