@@ -1,18 +1,13 @@
 #include "holberton.h"
 
 /**
- * times_table -  entry point
- * @x: interger
- * @y: character
- * Description: function that prints the 9 times table, starting with 0
+ * times_table -  function that prints the 9 times table, starting with 0
  * Return: void
  */
 
 void times_table(void)
 {
-	int x;
-	int y;
-        int z;
+	int x, y , z;
 
 	for (x = 0; x <= 9; x++)
 	{
@@ -27,10 +22,10 @@ void times_table(void)
 					break;
 				}
 				else
-				_putchar(z + '0');
+					_putchar(z + '0');
 				_putchar(',');
 				_putchar(' ');
-                                _putchar(' ');
+				_putchar(' ');
 			}
 			else if (z <= 9 && z > 0)
 			{
@@ -40,10 +35,10 @@ void times_table(void)
 					break;
 				}
 				else
-				_putchar(z + '0');
+					_putchar(z + '0');
 				_putchar(',');
 				_putchar(' ');
-                                _putchar(' ');
+				_putchar(' ');
 			}
 			else
 			{
@@ -54,7 +49,7 @@ void times_table(void)
 					break;
 				}
 				else
-				_putchar((z / 10) + '0');
+					_putchar((z / 10) + '0');
 				_putchar((z % 10) + '0');
 				_putchar(',');
 				_putchar(' ');
