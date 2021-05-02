@@ -14,17 +14,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/*guard conditions if head is NULL*/
 	if (*head == NULL)
 	{
-		new = malloc(sizeof(dlistint_t));
-		/*guard condition if not enough memory*/
-		if (new == NULL)
-		{
-			dprintf(2, "Error: Can't malloc\n");
-			return (NULL);
-		}
-		new->n = n;
-		new->next = NULL;
-		new->prev = NULL;
-		*head = new;
+		return (NULL);
 	}
 	else
 	{
