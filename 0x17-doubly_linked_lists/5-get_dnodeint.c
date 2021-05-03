@@ -18,12 +18,12 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	/*loop to find nth of node or last node*/
 	while (head != NULL)
 	{
-		head = head->next;
-		i++;
 		if (i == index)
 		{
 			break;
 		}
+		head = head->next;
+		i++;
 	}
 	if (i == index)
 	{
@@ -31,5 +31,4 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	}
 	else
 		return (NULL);
-
 }
