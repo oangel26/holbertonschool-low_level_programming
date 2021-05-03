@@ -10,30 +10,41 @@
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
+	dlistint_t *tmp;
 
 	/*guard conditions if head is NULL*/
 	if (head == NULL)
 	{
 		return (NULL);
 	}
-	new = *head;
-	while (new->next != NULL)
+	if (*head == NULL)
 	{
-		new = new->next;
+		new = malloc(sizeof(dlistint_t));
+		if (new == NULL)
+		{
+			return (NULL);
+		}
+		new->n = n;
+		new->next = NULL;
+		new->prev = NULL;
+		*head = new;
 	}
-	new->next = malloc(sizeof(dlistint_t));
-	/*guard condition if no memory for node*/
-	if (new->next == NULL)
+	else
 	{
-		dprintf(2, "Error: Can't malloc\n");
-		return (EXIT_FAILURE);
+		tmp = *head;
+		while (tmp->next != NULL)
+		{
+			tmp = tmp->next;
+		}
+		new = malloc(sizeof(dlistint_t));
+		if (new == NULL)
+		{
+			return (NULL);
+		}
+		new->n = n;
+		new->next = NULL;
+		new->prev = tmp;
+		tmp->next = new;
 	}
-	new->next->n = n;
-	new->next->next = NULL;
-	if (*head != NULL)
-	{
-		new->prev = *head;
-	}
-	(*head)->next = new;
 	return (*head);
 }
