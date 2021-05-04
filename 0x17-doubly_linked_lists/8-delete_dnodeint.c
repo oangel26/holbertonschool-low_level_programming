@@ -13,28 +13,36 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *tmp = *head;
 
 	/*Guard condition for NULL pointer value*/
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 	{
 		return (-1);
 	}
-	/*Loop to find length of list*/
-	while (tmp->next != NULL)
+	/*Guard condition for if head is NULL)*/
+	if (*head == NULL)
+	{
+		free (*head);
+		return (1);
+	}
+	/*Loop to find length of list */
+	while (i < index)
 	{
 		tmp = tmp->next;
 		i++;
 	}
-	/*Condition if index is first position*/
+	/*Edge case if index is first position*/
 	if (index == 0)
 	{
 		tmp = *head;
 		if ((*head)->next != NULL)
 		{
 			*head = (*head)->next;
+			(*head)->prev = NULL;
 		}
 		free(tmp);
 		return (1);
 	}
-	else if (index == i)
+	/*Edge case if index is last postion*/
+	else if (tmp->next == NULL)
 	{
 		if (tmp->prev != NULL)
 		{
@@ -43,12 +51,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free (tmp);
 		return (1);
 	}
-	else if (index < i)
+	/*EDGE case if index is in middle of list*/
+ 	else if (tmp != NULL)
 	{
-	
+		tmp->prev->next = tmp->next;
+		tmp->next->prev = tmp->prev;
 		free (tmp);
 		return (1);
 	}
+	/*EDGE case if index is out of list lenght*/
 	else
 	{
 		return (-1);
