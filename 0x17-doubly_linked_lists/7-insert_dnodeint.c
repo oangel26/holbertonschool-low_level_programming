@@ -11,62 +11,63 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new;
-	dlistint_t *tmp;
-	unsigned int i, j = 0;
-
+	dlistint_t *current = *h;
+	unsigned int i = 0;
+	/*Guard condition if malloc cant alloc memory*/
+        new = malloc(sizeof(dlistint_t));
+        if (new == NULL)
+		return (NULL);
+	new->n = n;
+        new->next = NULL;
+	new->prev = NULL;
+	/*Guard condition if head node is NULL*/
 	if (h == NULL)
-	{
 		return (NULL);
-	}
-	tmp = *h;
-	while (tmp != NULL)
+	/*Loop to get the length of list*/
+	while (i < idx)
 	{
+		if (current == NULL)
+		{
+			return (NULL);
+		}
+		current = current->next;
 		i++;
-		tmp = tmp->next;
 	}
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
-	{
-		return (NULL);
-	}
+	/*EDGE case if index of new node is 0*/
 	if (idx == 0)
 	{
-		new->n = n;
-		new->prev = NULL;
+		/*Node creation if *head is NULL*/
 		if (*h == NULL)
 		{
-			new->next = NULL;
+			*h = new;
+			return (new);
 		}
 		else
 		{
-			new->next = *h;
+			new->next = (*h);
 			(*h)->prev = new;
+			*h = new;
+			return (new);
 		}
-		*h = new;
-		return (new);
 	}
+	/*EDGE case if index is in last*/
 	else if (i == idx)
 	{
-		new->n = n;
-		new->next = NULL;
-		new->prev = tmp;
-		tmp->next = new;
-		return (new);
-	}
-	else if (idx < i)
-	{
-		tmp = *h;
-		while (j != idx)
+		/*EDGE case if index is in last*/
+		if (current->next == NULL)
 		{
-			tmp = tmp->next;
-			j++;
+			current->next = new;
+			new->prev = current;
+			return (new);
 		}
-		new->n = n;
-		new->next = tmp;
-		new->prev = tmp->prev;
-		tmp->prev->next = new;
-		tmp->prev = new;
-		return (new);
+		else
+		{
+			new->next = current;
+			new->prev = current->prev;
+			current->prev->next = new;
+			current->prev = new;
+			return (new);
+		}
 	}
 	else
 	{
