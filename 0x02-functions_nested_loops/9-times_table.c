@@ -27,6 +27,18 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(' ');
 			}
+			else if (z < 10 && (y + 1) * x >= 10)
+			{
+				if (y == 9)
+				{
+					 _putchar(z + '0');
+					 break;
+				}
+				else
+					_putchar(z + '0');
+				_putchar(',');
+				_putchar(' ');
+			}
 			else if (z <= 9 && z > 0)
 			{
 				if (y == 9)
