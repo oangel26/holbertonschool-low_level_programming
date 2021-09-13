@@ -19,36 +19,31 @@ int main(void)
 	{
 		for (y = 0; y <= 9; y++)
 		{
-				for (z = 0; z <= 9; z++)
+			for (z = 0; z <= 9; z++)
+			{
+				for (w = 0; w <= 9; w++)
 				{
-					for (w = 0; w <= 9; w++)
+					if (((x * 10) + y) < ((z * 10) + w) && x <= z)
 					{
-						if ((x + y) < (z + w) && x <= z)
+						putchar(x + '0');
+						putchar(y + '0');
+						putchar(' ');
+						putchar(z + '0');
+						putchar(w + '0');
+						if (x == 9 && y == 8 && z == 9 && w == 9)
 						{
-
-							putchar(x + '0');
-
-							putchar(y + '0');
-
+							break;
+						}
+						else
+						{
+							putchar(',');
 							putchar(' ');
-
-							putchar(z + '0');
-
-							putchar(w + '0');
-
-							if (x != 9 || y != 8 || z != 9 || w != 9)
-							{
-								putchar(',');
-
-								putchar(' ');
-
-							}
 						}
 					}
 				}
+			}
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
