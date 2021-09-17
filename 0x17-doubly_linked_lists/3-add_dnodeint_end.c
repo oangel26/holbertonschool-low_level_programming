@@ -15,7 +15,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node;
 	dlistint_t *ptr = *head;
-	
+
 	/* GUARD CONDITION */
 	if (head == NULL)
 		return (NULL);
@@ -25,7 +25,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	/* GUARD CONDITION if not enough memory to alloc new node */
 	if (new_node == NULL)
 		return (NULL);
-			
+
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
