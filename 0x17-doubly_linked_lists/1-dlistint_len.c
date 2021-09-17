@@ -1,25 +1,27 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
- * dlistint_len - function that returns the number of elements ina linked list
- * @h: pointer to constnt data sturctur dlistint_t
- * Return: number of elements in linked list
+ * dlistint_len - Function that return the number of elements in a linked
+ * dlistint_t list.
+ * @h: pointer to a constant dlistint_t list
+ * Return: Always
  */
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t i = 0;
+	size_t num_elements = 0;
 
-	/*guard condition*/
+	/* GUARD CONTITION */
 	if (h == NULL)
-	{
 		return (0);
-	}
-	/*iterator to find number of elements in linked list*/
+
 	while (h != NULL)
 	{
-		i++;
+		num_elements++;
 		h = h->next;
 	}
-	return (i);
+	return (num_elements);
 }
