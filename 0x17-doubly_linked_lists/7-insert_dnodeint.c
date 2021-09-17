@@ -18,13 +18,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *ptr = *h;
 	unsigned int counter = 1;
 
-	/* GUARD CONDITION */
 	if (h == NULL)
 		return (NULL);
-
 	/* new_node declaration */
 	new_node = malloc(sizeof(dlistint_t));
-	/* GUARD CONDITION for memory allocation new_node */
 	if (new_node == NULL)
 		return (NULL);
 	/* new_node initialization */
