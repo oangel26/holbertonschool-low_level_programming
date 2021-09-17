@@ -38,12 +38,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		while (counter < idx && ptr != NULL)
 		{
-			printf("counter %d\n", counter);
 			ptr = ptr->next;
 			counter++;
 		}
 		if (ptr == NULL)
+		{
+			free(new_node);
 			return (NULL);
+		}
 		else if (ptr->next == NULL)
 			add_dnodeint_end(&(*h), n);
 		else
