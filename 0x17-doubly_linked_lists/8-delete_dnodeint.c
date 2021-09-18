@@ -24,6 +24,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		{
 			if (counter == index)
 				break;
+
 			else
 			{
 			head = head->next;
@@ -54,13 +55,11 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	/* EDGE case no nodes in list */
 	if (head == NULL || *head == NULL)
 		return (-1);
-
 	/* EDGE case list of single node node & index = 0 */
 	if (index == 0 && (*head)->next == NULL)
 	{
 		*head = NULL;
 		free(ptr);
-		return (1);
 	}
 	/* EDGE case list greater than 1 & index = 0 */
 	else if (index == 0 && (*head)->next != NULL)
@@ -68,17 +67,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		*head = (*head)->next;
 		free(ptr);
 		(*head)->prev = NULL;
-		return (1);
 	}
 	else
 	{
 		ptr = get_dnodeint_at_index(*head, index);
+		/* EDGE case if index out of range */
+		if (ptr == NULL)
+			return (-1);
 		/* EDGE case index is last node */
-		if (ptr->next == NULL)
+		else if (ptr->next == NULL)
 		{
 			ptr->prev->next = NULL;
 			free(ptr);
-			return (1);
 		}
 		/* EDGE case node is in middle of two nodes */
 		else
@@ -86,8 +86,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			ptr->prev->next = ptr->next;
 			ptr->next->prev = ptr->prev;
 			free(ptr);
-			return (1);
 		}
 	}
-	return (-1);
+	return (1);
 }
