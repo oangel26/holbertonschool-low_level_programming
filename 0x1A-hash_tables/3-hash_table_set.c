@@ -1,49 +1,45 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set -  function that adds an element to the hash table.
- * @ht: pointer to (hash_table_t) hash table to be updated
- * @key: pointer to (const char) key to be added
- * @value: pointer to (const char) value to be added
- * Return: 1 if it succeeded, 0 otherwise
+ * hash_table_set - Function that adds an element to the hash table.
+ * @ht: pointer to hash table data structure (hash_table_t*)
+ * @key: pointer to key (const char*): Always EXIT_SUCCESS.
+ * @value: pointer to value (const char*)
+ * Returns: 1 if it succeeded, 0 otherwise
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *new_node = NULL;
+	hash_node_t *new_node;
+	unsigned long int k_index;
 
-	index = key_index((unsigned char *)key, ht->size);
-
-	if (ht == NULL)
-	{
-		printf("Hash table cant be NULL\n");
+	/* GUARD CONDITION if hash_table does not exists */
+	if (ht == NULL ||  key == NULL || key == (void *)0)
 		return (0);
-	}
-	if (key == NULL)
-	{
-		printf("key cannot be an empty string\n");
-		return (0);
-	}
 
 	new_node = malloc(sizeof(hash_node_t));
+
+	/* GUARD CONDITION for malloc allocation */
 	if (new_node == NULL)
-	{
-		printf("cant alloc memory for new node\n");
 		return (0);
-	}
+
+	/* Node values initialization */
 	new_node->key = (char *) key;
 	new_node->value = (char *) value;
+	new_node->next = NULL;
 
-	if (ht->array[index] != NULL)
-	{
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-	}
+	/* Hash index for the key given */
+	k_index = key_index((const unsigned char *) key, ht->size);
+
+	/* If index is NULL asign new_node */
+	if (ht->array[k_index] == NULL)
+		ht->array[k_index] = new_node;
+
+	/* In case of collision generate a linked list in given index */
 	else
 	{
-		new_node->next = NULL;
-		ht->array[index] = new_node;
+		new_node->next = ht->array[k_index];
+		ht->array[k_index] = new_node;
 	}
 	return (1);
 }

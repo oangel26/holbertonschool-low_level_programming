@@ -1,41 +1,51 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - function that prints a hash table
- * @ht: pointer to hash table (hash_table_t) data structure
- * Return: void
+ * hash_table_print - Function that prints a hash table.
+ * @ht: pointer to hash table
+ * Return: void.
  */
 
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i;
-	unsigned long int j;
+	int coma_switch = 0;
+	hash_node_t *ptr = NULL;
 
 	printf("{");
 	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i] != NULL)
+		if (ht->array[i] == NULL)
+			continue;
+		else if (ht->array[i]->next == NULL)
 		{
-			if (ht->array[i]->next == NULL)
+			if (coma_switch == 0)
 			{
 				printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
+				coma_switch = 1;
 			}
 			else
-				while (ht->array[i]->next == NULL)
-				{
-					printf("'%s': '%s', ", ht->array[i]->next->key, ht->array[i]->next->value);
-					ht->array[i]->next = ht->array[i]->next->next;
-				}
-			j = i + 1;
-			while (ht->array[j] == NULL)
 			{
-				if (ht->array[j + 1] != NULL)
+				printf(", ");
+				printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
+			}
+		}
+		else
+		{
+			ptr = ht->array[i];
+			while (ptr != NULL)
+			{
+				if (coma_switch == 0)
 				{
-					printf(", ");
-					break;
+					printf("'%s': '%s'", ptr->key, ptr->value);
+					 coma_switch = 1;
 				}
 				else
-					j++;
+				{
+					printf(", ");
+					printf("'%s': '%s'", ptr->key, ptr->value);
+				}
+				ptr = ptr->next;
 			}
 		}
 	}
