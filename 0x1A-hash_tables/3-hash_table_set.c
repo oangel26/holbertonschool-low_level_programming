@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int k_index;
 
 	/* GUARD CONDITION if hash_table does not exists */
-	if (ht == NULL ||  key == NULL || key == (void *)0)
+	if (ht == NULL ||  key == NULL || key == (void *)0 || key == '\0')
 		return (0);
 
 	new_node = malloc(sizeof(hash_node_t));
