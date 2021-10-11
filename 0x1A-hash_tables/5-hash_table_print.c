@@ -8,8 +8,7 @@
 
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int i;
-	int coma_switch = 0;
+	unsigned long int i, coma_switch = 0;
 	hash_node_t *ptr = NULL;
 
 	printf("{");
@@ -44,10 +43,8 @@ void hash_table_print(const hash_table_t *ht)
 				{
 					printf(", ");
 					printf("'%s': '%s'", ptr->key, ptr->value);
-				}
-				ptr = ptr->next;
+				} ptr = ptr->next;
 			}
 		}
-	}
-	printf("}\n");
+	} printf("}\n");
 }
