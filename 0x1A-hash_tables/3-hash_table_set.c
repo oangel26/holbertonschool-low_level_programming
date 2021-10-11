@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Node values initialization */
 	new_node->key = (char *) key;
-	new_node->value = (char *) value;
+	new_node->value = strdup(value);
 	new_node->next = NULL;
 
 	/* Hash index for the key given */
