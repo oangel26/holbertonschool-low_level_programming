@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = NULL;
 
 	/* Hash index for the key given */
-	k_index = key_index((const unsigned char *) key, ht->size);
+	k_index = key_index((const unsigned char *) new_node->key, ht->size);
 
 	/* If index is NULL asign new_node */
 	if (ht->array[k_index] == NULL)
