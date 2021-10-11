@@ -20,17 +20,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	ptr =  ht->array[index];
 	if (ptr == NULL)
 		return (NULL);
-	else
-	{
-		if (strcmp(ptr->key, key) == 0 )
-			return (ptr->value);
+	if (strcmp(ptr->key, key) == 0)
+		return (ptr->value);
 
-		while (ptr != NULL)
-		{
-			if (strcmp(ptr->key, key) == 0)
-				return (ptr->value);
-			ptr = ptr->next;
-		}
+	while (ptr != NULL)
+	{
+		if (strcmp(ptr->key, key) == 0)
+			return (ptr->value);
+		ptr = ptr->next;
 	}
 	return (NULL);
 }
