@@ -26,10 +26,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 		/* GUARD CONDITION for buffer of array of pointers */
 		if (hash_table->array == NULL)
+		{
+			free(hash_table);
 			return (NULL);
+		}
 	}
 	/* Initialize array pointers in NULL */
-	while (i <= size)
+	while (i < size)
 	{
 		hash_table->array[i] = NULL;
 		i++;
