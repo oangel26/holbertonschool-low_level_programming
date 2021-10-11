@@ -10,10 +10,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *hash_table;
 	unsigned long int i = 0;
 
-	hash_table = malloc(sizeof(hash_table_t));
+	if (size == 0)
+		return (NULL);
 
+	hash_table = malloc(sizeof(hash_table_t));
 	/* GUARD CONDITIONS for hash_table memory allocation*/
-	if (hash_table == NULL || size == 0)
+	if (hash_table == NULL)
 		return (NULL);
 
 	else
