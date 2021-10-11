@@ -14,24 +14,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	hash_table = malloc(sizeof(hash_table_t));
-	/* GUARD CONDITIONS for hash_table memory allocation*/
 	if (hash_table == NULL)
 		return (NULL);
 
 	else
 	{
-		/* initialize hash table and create buffer of array of ptr */
 		hash_table->size = size;
 		hash_table->array = malloc(sizeof(hash_node_t) * size);
 
-		/* GUARD CONDITION for buffer of array of pointers */
 		if (hash_table->array == NULL)
 		{
 			free(hash_table);
 			return (NULL);
 		}
 	}
-	/* Initialize array pointers in NULL */
 	while (i < size)
 	{
 		hash_table->array[i] = NULL;
