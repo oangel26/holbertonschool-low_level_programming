@@ -35,6 +35,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[k_index] == NULL)
 		ht->array[k_index] = new_node;
 
+	else if (strcmp(ht->array[k_index]->key, key) == 0)
+	{
+		ht->array[k_index]->value = strdup(value);
+		free(new_node);
+	}
 	/* In case of collision generate a linked list in given index */
 	else
 	{
